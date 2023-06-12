@@ -1,5 +1,6 @@
 from utils import ui
 from backend.entities import Patient, Session
+from backend.services import SessionService
 
 
 def create_recording_session(departments):
@@ -26,5 +27,11 @@ def create_recording_session(departments):
     return session
 
 
-def start_session(session):    
-    pass
+def start_session(session):
+    session_service = SessionService(session)   
+    session_service.start()
+    return session_service
+
+
+def end_session(session_service):
+    session_service.end()
