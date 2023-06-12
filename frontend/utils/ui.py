@@ -9,7 +9,7 @@ def display_text(text: str):
     st.write(text)
 
 
-def get_text_input(field: str):
+def get_text_input(field: str) -> str:
     """
     Takes in information, as required by `field`,
     from the user as text input, and returns it.
@@ -32,7 +32,7 @@ def select_option(field: str, list_of_options: list) -> str:
     return st.selectbox(field, list_of_options)
 
 
-def click(field: str):
+def click(field: str) -> bool:
     """
     Defines a button for the given `field` and
     returns if the button was clicked or not.
